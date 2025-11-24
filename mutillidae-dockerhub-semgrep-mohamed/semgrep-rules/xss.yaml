@@ -1,0 +1,12 @@
+rules:
+  - id: php-xss-reflected
+    title: Detect Reflected XSS in PHP
+    languages: [php]
+    severity: WARNING
+    message: "Possible Reflected XSS: Unsanitized user input echoed into HTML."
+    pattern: |
+      echo $_GET["$VAR"];
+    metadata:
+      author: Mohamed
+      category: security
+      cwe: "CWE-79"

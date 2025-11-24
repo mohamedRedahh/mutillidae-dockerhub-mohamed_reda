@@ -1,0 +1,12 @@
+rules:
+  - id: php-sqli-detection
+    title: Detect SQL Injection in PHP
+    languages: [php]
+    severity: ERROR
+    message: "Possible SQL Injection: User input concatenated into SQL query."
+    pattern: |
+      mysqli_query($DB, $QUERY);
+    metadata:
+      author: Mohamed
+      category: security
+      cwe: "CWE-89"
